@@ -17,6 +17,16 @@ function M.config()
 
   lvim.builtin.telescope = vim.tbl_extend("force", lvim.builtin.telescope, {
     defaults = {
+      --find_command = {
+      --  "rg",
+      --  "--no-heading",
+      --  "--with-filename",
+      --  "--line-number",
+      --  "--column",
+      --  "--smart-case",
+      --  "--hidden",
+      --  "--glob '!.git'",
+      --},
       prompt_prefix = " ",
       selection_caret = " ",
       entry_prefix = "  ",
@@ -34,7 +44,7 @@ function M.config()
       file_sorter = require("telescope.sorters").get_fzy_sorter,
       file_ignore_patterns = {},
       generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-      path_display = { shorten = 5 },
+      path_display = { "absolute" },
       winblend = 0,
       border = {},
       borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },

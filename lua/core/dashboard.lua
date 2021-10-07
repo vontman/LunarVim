@@ -31,8 +31,8 @@ M.config = function(config)
 
     custom_section = {
       a = {
-        description = { "  Find File          " },
-        command = "Telescope find_files",
+        description = { "  Load Last Session  " },
+        command = "SessionLoad",
       },
       b = {
         description = { "  Recent Projects    " },
@@ -42,9 +42,13 @@ M.config = function(config)
         description = { "  Recently Used Files" },
         command = "Telescope oldfiles",
       },
+      c = {
+        description = { "  Find File          " },
+        command = ":lua require'telescope.builtin'.find_files{}",
+      },
       d = {
         description = { "  Find Word          " },
-        command = "Telescope live_grep",
+        command = ":lua require'telescope.builtin'.live_grep{}",
       },
       e = {
         description = { "  Configuration      " },

@@ -14,7 +14,7 @@ function M.config()
       },
       lsp_diagnostics = 1,
       view = {
-        width = 30,
+        width = 60,
         side = "left",
         auto_resize = false,
         mappings = {
@@ -31,7 +31,7 @@ function M.config()
     },
     ignore = { ".git", "node_modules", ".cache" },
     quit_on_open = 0,
-    hide_dotfiles = 1,
+    hide_dotfiles = 0,
     git_hl = 1,
     root_folder_modifier = ":t",
     allow_resize = 1,

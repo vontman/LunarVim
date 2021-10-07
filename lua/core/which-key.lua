@@ -62,13 +62,17 @@ M.config = function()
     -- see https://neovim.io/doc/user/map.html#:map-cmd
     vmappings = {
       ["/"] = { ":CommentToggle<CR>", "Comment" },
+      ["y"] = { "\"+y", "Copy To System Clipboard" },
+      ["p"] = { "\"+p", "Paste from System Clipboard" },
     },
     mappings = {
-      ["w"] = { "<cmd>w!<CR>", "Save" },
+      -- ["w"] = { "<cmd>w!<CR>", "Save" },
+      ["w"] = { "<cmd>w<CR>", "Save" },
       ["q"] = { "<cmd>q!<CR>", "Quit" },
       ["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
       ["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
-      ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
+      ["f"] = { "<cmd>:lua require'telescope.builtin'.find_files{}<CR>", "Find File" },
+      ["F"] = { "<cmd>:lua require'telescope.builtin'.live_grep{}<CR>", "Find String" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
       b = {
         name = "Buffers",
@@ -103,7 +107,8 @@ M.config = function()
         S = { "<cmd>PackerStatus<cr>", "Status" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
       },
-
+      ["e"] = { "<cmd>lua require'core.nvimtree'.toggle_tree()<CR>", "Explorer" },
+      -- ["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
       -- " Available Debug Adapters:
       -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
       -- " Adapter configuration and installation instructions:
@@ -223,14 +228,15 @@ M.config = function()
       s = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        f = { "<cmd>:lua require'telescope.builtin'.find_files{}<CR>", "Find File" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+<<<<<<< HEAD
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         p = {
           "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
@@ -240,7 +246,14 @@ M.config = function()
       T = {
         name = "Treesitter",
         i = { ":TSConfigInfo<cr>", "Info" },
+=======
+        c = { "<cmd>Telescope commands<cr>", "Commands" },
+>>>>>>> 4e7eaa8 (Added custom metho to find/replace next word selected, Removed disabled builtins, added neon and lsp-signature plugins, modified telescope commands)
       },
+      -- T = {
+      --   name = "Treesitter",
+      --   i = { ":TSConfigInfo<cr>", "Info" },
+      -- },
     },
   }
 end

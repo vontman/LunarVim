@@ -14,7 +14,7 @@ M.setup = function()
   vim.o.termguicolors = true
 
   g.nvim_tree_side = "left"
-  g.nvim_tree_width = 30
+  g.nvim_tree_width = 60
   g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
   g.nvim_tree_auto_open = 1
   g.nvim_tree_auto_close = 1
@@ -28,6 +28,8 @@ M.setup = function()
   g.nvim_tree_allow_resize = 1
   g.nvim_tree_lsp_diagnostics = 1
   g.nvim_tree_auto_ignore_ft = { "startify", "dashboard" }
+  -- Show hidden files by default
+  g.nvim_tree_hide_dotfiles = 0
 
   g.nvim_tree_show_icons = {
     git = 1,

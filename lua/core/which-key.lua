@@ -59,24 +59,28 @@ M.config = function()
     -- see https://neovim.io/doc/user/map.html#:map-cmd
     vmappings = {
       ["/"] = { ":CommentToggle<CR>", "Comment" },
+      ["y"] = { "\"+y", "Copy To System Clipboard" },
+      ["p"] = { "\"+p", "Paste from System Clipboard" },
     },
     mappings = {
-      ["w"] = { "<cmd>w!<CR>", "Save" },
+      -- ["w"] = { "<cmd>w!<CR>", "Save" },
+      ["w"] = { "<cmd>w<CR>", "Save" },
       ["q"] = { "<cmd>q!<CR>", "Quit" },
       ["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
       ["c"] = { "<cmd>BufferClose<CR>", "Close Buffer" },
       ["e"] = { "<cmd>lua require'core.nvimtree'.toggle_tree()<CR>", "Explorer" },
-      ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
-      ["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
+      ["f"] = { "<cmd>:lua require'telescope.builtin'.find_files{}<CR>", "Find File" },
+      ["F"] = { "<cmd>:lua require'telescope.builtin'.live_grep{}<CR>", "Find String" },
+      -- ["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
       [";"] = { "<cmd>Dashboard<CR>", "Dashboard" },
-      p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
-      },
+      -- p = {
+      --   name = "Packer",
+      --   c = { "<cmd>PackerCompile<cr>", "Compile" },
+      --   i = { "<cmd>PackerInstall<cr>", "Install" },
+      --   r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
+      --   s = { "<cmd>PackerSync<cr>", "Sync" },
+      --   u = { "<cmd>PackerUpdate<cr>", "Update" },
+      -- },
 
       -- " Available Debug Adapters:
       -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
@@ -140,20 +144,20 @@ M.config = function()
       s = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        f = { "<cmd>:lua require'telescope.builtin'.find_files{}<CR>", "Find File" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
+        c = { "<cmd>Telescope commands<cr>", "Commands" },
       },
-      T = {
-        name = "Treesitter",
-        i = { ":TSConfigInfo<cr>", "Info" },
-      },
+      -- T = {
+      --   name = "Treesitter",
+      --   i = { ":TSConfigInfo<cr>", "Info" },
+      -- },
     },
   }
 end

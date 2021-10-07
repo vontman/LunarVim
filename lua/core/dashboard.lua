@@ -26,22 +26,22 @@ M.config = function()
 
     custom_section = {
       a = {
-        description = { "  Find File          " },
-        command = "Telescope find_files",
+        description = { "  Load Last Session  " },
+        command = "SessionLoad",
       },
       b = {
         description = { "  Recently Used Files" },
         command = "Telescope oldfiles",
       },
-      -- c = {
-      --   description = { "  Load Last Session  " },
-      --   command = "SessionLoad",
-      -- },
       c = {
-        description = { "  Find Word          " },
-        command = "Telescope live_grep",
+        description = { "  Find File          " },
+        command = ":lua require'telescope.builtin'.find_files{}",
       },
       d = {
+        description = { "  Find Word          " },
+        command = ":lua require'telescope.builtin'.live_grep{}",
+      },
+      e = {
         description = { "  Settings           " },
         command = ":e " .. CONFIG_PATH .. "/lv-config.lua",
       },

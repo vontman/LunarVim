@@ -236,19 +236,11 @@ M.config = function()
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-<<<<<<< HEAD
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         p = {
           "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
           "Colorscheme with Preview",
         },
-      },
-      T = {
-        name = "Treesitter",
-        i = { ":TSConfigInfo<cr>", "Info" },
-=======
-        c = { "<cmd>Telescope commands<cr>", "Commands" },
->>>>>>> 4e7eaa8 (Added custom metho to find/replace next word selected, Removed disabled builtins, added neon and lsp-signature plugins, modified telescope commands)
       },
       -- T = {
       --   name = "Treesitter",
